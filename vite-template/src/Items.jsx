@@ -24,7 +24,7 @@ useEffect(() => {
 return { itemsList, error, loading };
 }
 
-const Items = () => {
+const Items = ({updateCart}) => {
   const { itemsList, error, loading } = createStore();
 
   if (loading) return <p>Loading...</p>;
@@ -33,7 +33,7 @@ const Items = () => {
   return (
     <div className="cardContainer">
       {itemsList.map((listItem) => 
-        <Item key={listItem.title} product={listItem} />
+        <Item updateCart={updateCart} key={listItem.title} product={listItem} />
       )}
     </div>
   );
