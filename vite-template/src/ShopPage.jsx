@@ -8,7 +8,6 @@ const ShopPage = () => {
 
   const updateCart = () => {
     setCartNums(cartNums + 1);
-    console.log(cartNums);
   };
 
   return (

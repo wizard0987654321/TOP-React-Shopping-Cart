@@ -9,7 +9,7 @@ const Navigation = () => {
         <div id="navbar">
             <Link to="/">Home</Link>
             <Link to="shoppage/">Shopping</Link>
-            <Link to="contactpage">Contact</Link>
+            <Link to="contactpage/">Contact</Link>
         </div>
         <Outlet />
     </>
