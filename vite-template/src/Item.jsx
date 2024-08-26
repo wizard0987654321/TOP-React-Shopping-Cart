@@ -1,7 +1,11 @@
 import React from "react";
 import "./Item.css"
+import { useContext } from "react";
+import { CartContext } from "./Navigation";
 
-const Item = ({product, updateCart}) => {
+const Item = ({product}) => {
+    const { updateCart } = useContext(CartContext);
+
     return (
         <div className="card">
             <h4>{product.title}</h4>
@@ -14,7 +18,7 @@ const Item = ({product, updateCart}) => {
             />
             <h6>{product.price}$</h6>
             <p>{product.description}</p>
-            <button className="cartButton" onClick={updateCart}>Add to Cart</button>
+            <button className="cartButton" onClick={() => updateCart(product)}>Add to Cart</button>
         </div>
       );
 }

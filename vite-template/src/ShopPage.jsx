@@ -1,19 +1,17 @@
 import React from "react";
 import Items from "./Items";
 import Cart from "./Cart";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "./Navigation";
 
 const ShopPage = () => {
-  const [cartNums, setCartNums] = useState(0);
-
-  const updateCart = () => {
-    setCartNums(cartNums + 1);
-  };
+  const { cartItems } = useContext(CartContext);
 
   return (
   <>
-    {cartNums > 0 && <Cart cartNums={cartNums} />}
-    <Items updateCart={updateCart}/>
+    {cartItems.length > 0 && <Cart />}
+    <Items 
+    />
   </>
 )
 };
